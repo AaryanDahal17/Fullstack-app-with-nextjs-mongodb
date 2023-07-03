@@ -10,6 +10,12 @@ export async function GET() {
     items.data = dataa;
   })
 
-  return NextResponse.json(items)
+  return NextResponse.json(items,{
+    headers: {
+      "Access-Control-Allow-Origin": "https://food-loan-tracking.vercel.app",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  })
 
 }
