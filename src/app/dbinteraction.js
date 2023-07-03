@@ -1,6 +1,6 @@
 async function gettheItems(){
 
-    const resp = await fetch('http://localhost:3000/api/getitems')
+    const resp = await fetch('api/getitems')
     
     const data = await resp.json()
 
@@ -9,7 +9,7 @@ async function gettheItems(){
 
 
 async function addtheitem(obj){
-    const res = await fetch('http://localhost:3000/api/additem', {
+    const res = await fetch('api/additem', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
