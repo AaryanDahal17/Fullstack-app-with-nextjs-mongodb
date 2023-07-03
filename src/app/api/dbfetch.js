@@ -9,7 +9,6 @@ async function addItem(client,obj) {
       console.error("An error occurred in adding data to mongoDB:", error);
     }
   }
-  
 
   async function fetchItems(client) {
     try {
