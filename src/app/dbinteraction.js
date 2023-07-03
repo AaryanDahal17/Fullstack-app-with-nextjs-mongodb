@@ -1,6 +1,6 @@
 async function gettheItems(){
 
-    const resp = await fetch('api/getitems')
+    const resp = await fetch("api/getitems", {cache:"no-store"})
     
     const data = await resp.json()
 
