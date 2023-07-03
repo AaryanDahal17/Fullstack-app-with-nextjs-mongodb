@@ -12,7 +12,7 @@ export async function GET() {
 
   return NextResponse.json(items,{
     headers: {
-      "Access-Control-Allow-Origin": "https://food-loan-tracking.vercel.app",
+      "Access-Control-Allow-Origin": "https://food-loan-tracking.vercel.app, https://moneyleftgive.netlify.app",
       "Access-Control-Allow-Methods": "GET, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
     },
