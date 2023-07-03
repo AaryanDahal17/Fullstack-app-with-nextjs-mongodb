@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Bottombar from "./components/bottombar";
 import { MyContextProvider } from "./MyContext";
+import { gettheItems } from "./dbinteraction";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -13,7 +14,10 @@ export const metadata = {
 
 
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  
+  await gettheItems()
+  
   return (
     <html lang="en">
       <body className={inter.className}>
