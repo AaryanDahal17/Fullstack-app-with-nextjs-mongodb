@@ -1,30 +1,38 @@
 "use client";
 import { MyContext } from "./MyContext";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { addtheitem } from "./dbinteraction";
+import { gettheItems } from "./dbinteraction";
 
 function AddItemForm() {
-
-  
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   // const daValues = useContext(MyContext);
   // const { listItems, setListItems, setWarning, setSubmit } = daValues;
-  const { theItems, setTheItems } = useContext(MyContext);
+  const { theItems, setTheItems, isFetched, setIsFetched } = useContext(MyContext);
 
   const onSubmitHandler = () => {
-    console.log("button was clickeddd");
+    // console.log("button was clickeddd");
     if (!name || !price) {
       alert("Enter full details");
     } else {
       setTheItems((prevItems) => {
         return [...prevItems, { name: name, price: price }];
       });
-      addtheitem({ name: name, price: price })
+      addtheitem({ name: name, price: price });
       setName("");
       setPrice("");
     }
   };
+
+  useEffect(() => {
+    if (!isFetched) {
+      gettheItems().then((data) => {
+        setTheItems(data.data);
+        setIsFetched(true);
+      });
+    }
+  }, [isFetched]);
 
   return (
     <div className="container">
