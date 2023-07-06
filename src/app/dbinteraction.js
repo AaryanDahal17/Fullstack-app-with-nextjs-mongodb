@@ -15,6 +15,7 @@ async function addtheitem(obj){
     // const res = await fetch('https://food-loan-tracking.vercel.app/api/additem', {
     // const res = await fetch('/api/additem', {
     method: 'POST',
+    mode: "no-cors",
     headers: {
       'Content-Type': 'application/json',
     },
