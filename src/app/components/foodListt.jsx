@@ -2,7 +2,7 @@
 
 import { MyContext } from "../MyContext";
 import { useContext,useEffect,useState } from "react";
-
+import { gettheItems } from "../dbinteraction";
 
 
 
@@ -88,9 +88,15 @@ const FoodListt = () => {
 
   const [totalPrice,setTotalPrice] = useState(0);
 
+  useEffect(()=>{
+
+    gettheItems.then((data)=>{
+      setTheItems(data.data)
+    })
+
+  },[])
   
   useEffect(()=>{
-    
     let daPrice = 0;
     theItems.map((item)=>{
       daPrice += Number(item.price)
