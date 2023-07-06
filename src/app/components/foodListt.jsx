@@ -91,7 +91,7 @@ const FoodListt = () => {
   useEffect(()=>{
     console.log("Use effect was triggerred")
 
-    gettheItems.then((data)=>{
+    gettheItems().then((data)=>{
       setTheItems(data.data)
     })
 
