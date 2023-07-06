@@ -10,21 +10,39 @@ async function gettheItems(){
 }
 
 
-async function addtheitem(obj){
-    const res = await fetch('https://moneyleftgive.netlify.app/api/additem',{
+async function addtheitem(obj) {
+  return await fetch("https://moneyleftgive.netlify.app/api/additem", {
     // const res = await fetch('https://food-loan-tracking.vercel.app/api/additem', {
     // const res = await fetch('/api/additem', {
-    method: 'POST',
+    method: "POST",
     mode: "no-cors",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(obj),
+  }).then((resp) => {
+    return resp.json();
   })
-
-    const data = await res.json()
-    return data;
 }
+
+
+
+
+// async function addtheitem(obj){
+//     const res = await fetch('https://moneyleftgive.netlify.app/api/additem',{
+//     // const res = await fetch('https://food-loan-tracking.vercel.app/api/additem', {
+//     // const res = await fetch('/api/additem', {
+//     method: 'POST',
+//     mode: "no-cors",
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(obj),
+//   })
+
+//     const data = await res.json()
+//     return data;
+// }
 
 
 module.exports = {gettheItems,addtheitem}
