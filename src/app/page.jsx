@@ -19,7 +19,7 @@ function AddItemForm() {
       setTheItems((prevItems) => {
         return [...prevItems, { name: name, price: price }];
       });
-      addtheitem({ name: name, price: price });
+      addtheitem({ name: name, price: price }).then(data=>console.log(data));
       setName("");
       setPrice("");
     }
