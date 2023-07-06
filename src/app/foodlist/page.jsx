@@ -91,7 +91,6 @@ const FoodListtt = () => {
 
   useEffect(()=>{
 
-    
     if (!isFetched){
       gettheItems().then((data) => {
         setTheItems(data.data);
