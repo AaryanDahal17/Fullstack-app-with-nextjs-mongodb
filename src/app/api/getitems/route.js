@@ -3,9 +3,9 @@ import getClient from "../dbconnect";
 import { NextResponse } from "next/server";
 
 
-export async function GET(request) {
+export async function GET() {
 
-    console.log(request)
+
     const items = {}
   await fetchItems(getClient()).then((dataa)=>{
     items.data = dataa;
@@ -20,3 +20,6 @@ export async function GET(request) {
   })
 
 }
+
+
+export const dynamic = 'force-dynamic'
