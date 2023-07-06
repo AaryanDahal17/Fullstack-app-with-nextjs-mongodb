@@ -89,10 +89,16 @@ const FoodListt = () => {
   const [totalPrice,setTotalPrice] = useState(0);
 
   useEffect(()=>{
+    console.log("Use effect was triggerred")
 
     gettheItems.then((data)=>{
       setTheItems(data.data)
     })
+
+
+    console.log(theItems)
+    console.log("did it wait")
+    
 
   },[])
   
