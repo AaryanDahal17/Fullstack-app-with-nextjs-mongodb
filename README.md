@@ -1,4 +1,4 @@
-# Basic full stack app using next
+# Basic full stack app using nextjs,mongodb
 <br/>
 This is an app made to track expenses between peers
 <br/>
