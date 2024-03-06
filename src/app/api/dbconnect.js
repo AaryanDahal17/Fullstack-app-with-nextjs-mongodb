@@ -1,7 +1,8 @@
 import {MongoClient} from 'mongodb'
+const {dbUrl} = require('../../../config.json')
 
 const url =
-  "mongodb+srv://negu:neguspotted@firstdb.wxhn4f5.mongodb.net/?retryWrites=true&w=majority";
+  dbUrl
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
