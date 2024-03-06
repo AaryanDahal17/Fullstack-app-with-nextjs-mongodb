@@ -5,7 +5,7 @@ This is an app made to track expenses between peers
 <br/>
 -> Create a config.json file in the main folder and enter your mongodb database connection key
 <br/>
--> deploy your project
+-> deploy your project in netlify
 <br/>
 <br/>
 
