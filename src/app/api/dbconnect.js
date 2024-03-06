@@ -1,8 +1,7 @@
 import {MongoClient} from 'mongodb'
-const {dbUrl} = require('../../../config.json')
+const {db_connect} = require('../../../config.json')
 
-const url =
-  dbUrl
+const url = process.env.DATABASE_CONNECT || db_connect
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
